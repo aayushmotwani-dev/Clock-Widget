@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChronoVerse Clock</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&family=Noto+Serif+JP:wght@300;600&family=Noto+Serif+SC:wght@300;600&family=Rozha+One&family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=Segoe+UI+Symbol&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['serif'],
+              japan: ['"Noto Serif JP"', 'serif'],
+              china: ['"Noto Serif SC"', 'serif'],
+              india: ['"Rozha One"', 'serif'],
+              mono: ['"Share Tech Mono"', 'monospace'],
+              flip: ['"Bebas Neue"', 'sans-serif'],
+              analog: ['"DM Sans"', 'sans-serif'],
+            },
+            animation: {
+              'spin-slow': 'spin 20s linear infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'flicker': 'flicker 3s infinite',
+            },
+            keyframes: {
+              flicker: {
+                '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': { opacity: '0.99', filter: 'drop-shadow(0 0 1px rgba(255,160,0,0.8)) drop-shadow(0 0 5px rgba(255,100,0,0.6))' },
+                '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': { opacity: '0.4', filter: 'none' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
