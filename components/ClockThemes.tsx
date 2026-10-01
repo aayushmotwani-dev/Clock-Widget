@@ -266,7 +266,7 @@ export const NixieClock: React.FC<ClockFaceProps> = ({ time, themeStyles, settin
   const activeColor = overrideColor || settings.customColor;
   const colorStyle = activeColor ? { color: activeColor, textShadow: `0 0 10px ${activeColor}, 0 0 20px ${activeColor}` } : {};
 
-  const NixieDigit = ({ value }: { value: string }) => (
+  const NixieDigit: React.FC<{ value: string }> = ({ value }) => (
     <div className="relative w-16 h-28 sm:w-24 sm:h-40 bg-black/40 rounded-full border border-white/5 flex items-center justify-center shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30 mix-blend-overlay"></div>
       <span className={`font-mono text-6xl sm:text-8xl z-10 ${themeStyles.textClass} animate-flicker`} style={colorStyle}>{value}</span>
