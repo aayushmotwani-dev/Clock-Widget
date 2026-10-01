@@ -30,6 +30,3 @@ npm run build
 npm run preview
 ```
 
-## Notes
-
-The project was started in Google AI Studio and then edited by hand. The original prompt history is in `migrated_prompt_history/`.
